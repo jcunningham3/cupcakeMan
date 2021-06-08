@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Cupcake Home{% endblock %}
+{% block content %}
+
+<h3>Welcome to the Cupcake Factory!</h3>
+
+<div id="cupcakes-list">
+  {% for cupcake in cupcakes %}
+  <div class="w3-card-4 w3-btn w3-ripple w3-mobile" style="width: 32%;">
+    <div class="">
+      <h5><b>{{cupcake.flavor}}</b></h5>
+    </div>
+    <img src="{{cupcake.image}}" alt="cupcake img" style="width:50%; height: auto">
+    <hr>
+    <div class="w3-right">
+      <div class="w3-btn w3-ripple w3-tiny w3-text-green">update</div>
+      <div id="delete-button" class="w3-btn w3-ripple w3-tiny w3-text-red">delete</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class="">
+  <h1 class="w3-right w3-btn w3-ripple w3-border w3-padding" style="border-radius: 15px;" onclick="document.getElementById('id01').style.display='block'">+</h1>
+</div>
+
+<!-- Add a cupcake Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-teal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h2>Add A New Cupcake</h2>
+    </header>
+    <div class="w3-container w3-padding">
+      <form id="new-cupcake-form">
+        <div>
+          <label for="form-flavor">Flavor: </label>
+          <input name="flavor" id="form-flavor">
+        </div>
+
+        <div>
+          <label for="form-size">Size: </label>
+          <input name="size" id="form-size">
+        </div>
+
+        <div>
+          <label for="form-rating">Rating: </label>
+          <input type="number" name="rating" id="form-rating">
+        </div>
+
+        <div>
+          <label for="form-image">Image: </label>
+          <input name="image" id="form-image">
+        </div>
+
+        <button>Add</button>
+      </form>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>cupcake factory</p>
+    </footer>
+  </div>
+</div>
+
+{% endblock %}

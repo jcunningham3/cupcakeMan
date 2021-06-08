@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!-- navigation -->
+    <div class="w3-bar w3-black">
+      <div class="w3-bar-item">
+        <h1>cupcake factory</h1>
+      </div>
+    </div>
+    <!-- main content -->
+    <div class="w3-margin">
+      {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/cupcakes.js"></script>
+  </body>
+</html>
